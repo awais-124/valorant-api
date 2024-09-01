@@ -1,42 +1,3 @@
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
-.character-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-h1{
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 40px;
-  color:brown;
-}
-
-.shuffle img{
-  width: 30px;
-  height: 30px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-
-.shuffle img:hover{
-  transform: rotate(90deg);
-  transition: all 0.5s;
-}
-
-.count{
-  font-weight: 600;
-  font-size: 25px;
-  color: #fff;
-  margin-left: 10px;
-  vertical-align:text-top;
-}
-
 .nav-bar{
   display: flex;
   flex-direction: row;
@@ -77,13 +38,12 @@ h1{
   transition: all 0.5s;
 }
 
+.nav-list-container {
+  display: flex;
+}
 
 .bar-image {
   display: none;
-}
-
-.nav-list-container {
-  display: flex;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,0 +1,33 @@
+.character-card {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color:#03346E;
+}
+
+.character-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.role {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.role img {
+  width: 45px;
+  height: 45px;
+}
+
+.abilities {
+  margin-top: 60px;
+}
+h3, h2, p{
+  color: azure;
+}

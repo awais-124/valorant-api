@@ -1,0 +1,29 @@
+.ability {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #6EACDA;
+  border-radius: 20px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.ability h3, .ability p{
+  color: #fff;
+}
+
+.ability-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  /* aspect-ratio: 1; */
+}
+
+.ability-info {
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+}
