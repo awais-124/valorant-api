@@ -1942,6 +1942,74 @@ const res = {
       ],
       voiceLine: null,
     },
+    {
+      "uuid": "efba5359-4016-a1e5-7626-b1ae76895940",
+      "displayName": "Vyse",
+      "description": "Metallic mastermind Vyse unleashes liquid metal to isolate, trap, and disarm her enemies. Through cunning and manipulation, she forces all who oppose her to fear the battlefield itself.",
+      "developerName": "Nox",
+      "characterTags": null,
+      "displayIcon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/displayicon.png",
+      "displayIconSmall": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/displayiconsmall.png",
+      "bustPortrait": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/fullportrait.png",
+      "fullPortrait": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/fullportrait.png",
+      "fullPortraitV2": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/fullportrait.png",
+      "killfeedPortrait": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/killfeedportrait.png",
+      "background": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/background.png",
+      "backgroundGradientColors": [
+        "f147ffff",
+        "823697ff",
+        "6153b7ff",
+        "3b3c4aff"
+      ],
+      "assetPath": "ShooterGame/Content/Characters/Nox/Nox_PrimaryAsset",
+      "isFullPortraitRightFacing": false,
+      "isPlayableCharacter": true,
+      "isAvailableForTest": true,
+      "isBaseContent": false,
+      "role": {
+        "uuid": "5fc02f99-4091-4486-a531-98459a3e95e9",
+        "displayName": "Sentinel",
+        "description": "Sentinels are defensive experts who can lock down areas and watch flanks, both on attacker and defender rounds.",
+        "displayIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+        "assetPath": "ShooterGame/Content/Characters/_Core/Roles/Sentinel_PrimaryDataAsset"
+      },
+      "recruitmentData": {
+        "counterId": "5cf4f9ee-4ace-08c3-ea08-9b98dade41d5",
+        "milestoneId": "bc02cacf-4c50-1e1b-8681-2a9cca6a6c40",
+        "milestoneThreshold": 200000,
+        "useLevelVpCostOverride": false,
+        "levelVpCostOverride": 0,
+        "startDate": "2024-08-28T21:00:00Z",
+        "endDate": "2024-09-26T21:00:00Z"
+      },
+      "abilities": [
+        {
+          "slot": "Ability1",
+          "displayName": "Shear",
+          "description": "EQUIP filaments of liquid metal. FIRE to place a hidden wall trap. When an enemy crosses, an indestructible wall bursts from the ground behind them. The wall lasts for a brief time before dissipating.",
+          "displayIcon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/ability1/displayicon.png"
+        },
+        {
+          "slot": "Ability2",
+          "displayName": "Arc Rose",
+          "description": "EQUIP an Arc Rose. Target a surface and FIRE to place a stealthed Arc Rose, or ALT Fire to place the Arc Rose through it. REUSE to blind all players looking at it. This ability can be picked up to be REDEPLOYED.",
+          "displayIcon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/ability2/displayicon.png"
+        },
+        {
+          "slot": "Grenade",
+          "displayName": "Razorvine",
+          "description": "EQUIP a nest of liquid metal. FIRE to launch. Upon landing, the nest becomes invisible. When ACTIVATED, it sprawls out into a large razorvine nest which slows and damages all players who move through it.",
+          "displayIcon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/grenade/displayicon.png"
+        },
+        {
+          "slot": "Ultimate",
+          "displayName": "Steel Garden",
+          "description": "EQUIP a bramble of liquid metal. FIRE to send the metal erupting from you as a torrent of metal thorns, JAMMING enemy primary weapons after a brief windup.",
+          "displayIcon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/ultimate/displayicon.png"
+        }
+      ],
+      "voiceLine": null
+    },
   ],
 };
 
@@ -1949,28 +2017,4 @@ const agents = res.data;
 
 export default agents;
 
-// const caller = () => {
-//   agents.map((agent, i) => {
-//     console.log(
-//       'NAME : ',
-//       agent.displayName || 'not found',
-//       '\n\nDESCRIPTION: ',
-//       agent.description || 'not found',
-//       '\n\nDEVELOPER : ',
-//       agent.developerName || 'not found',
-//       '\nROLE: ',
-//       agent.role?.displayName || 'not found'
-//     );
-//     console.log('\nABILITIES: ');
-//     agent.abilities.forEach((ability) => {
-//       console.log(
-//         "SLOT : ", ability.slot || 'not found',
-//         "\nNAME : ", ability.displayName || 'not found',
-//         "\nDETAILS : ", ability.description || 'not found',
-//         );
-//         console.log("\n- - - - - - - - - - -");
-//     });
-//       console.log("\n______________________________________________________________________________\n")
-//   });
-// };
-// caller();
+
