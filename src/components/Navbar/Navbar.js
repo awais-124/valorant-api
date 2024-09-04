@@ -41,7 +41,7 @@ function Navbar({
       <img src={logo} alt='Valorant-logo' />
       <div className={`nav-list-container ${isMenuOpen ? 'open' : ''}`}>
         <ul className='nav-list'>
-          <li onClick={displayBundles}>Bundles</li>
+          <li onClick={callDisplayBundles}>Bundles</li>
           <li onClick={() => filterAgents('All')}>Agents</li>
           <li onClick={() => filterAgents('Sentinel')}>Sentinels</li>
           <li onClick={() => filterAgents('Controller')}>Controllers</li>
