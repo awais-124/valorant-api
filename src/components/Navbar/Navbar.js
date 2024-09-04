@@ -15,8 +15,15 @@ function Navbar({
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen); // Toggle hamburger menu
+
+  const callDisplayBundles = () => {
+    toggleMenu();
+    displayBundles();
+  };
+  
   const filterAgents = (key) => {
     setShowBundles(false);
+    toggleMenu();
     if (key === 'All') {
       setHeading('Valorant Agent');
       setFilteredAgents(agents);
