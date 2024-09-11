@@ -9,54 +9,81 @@ import shuffle from './assets/shuffle.png';
 import Bundle from './components/Bundles/Bundle';
 import Agents from './components/Agents/Agents';
 import Navbar from './components/Navbar/Navbar';
+import SearchBar from './components/SearchBar/SearchBar';
 
 function App() {
-  const [filteredAgents, setFilteredAgents] = useState(agents);
-  const [showBundles, setShowBundles] = useState(true);
-  const [bundlesData, setBundles] = useState(bundles);
-  const [heading, setHeading] = useState('Gun Bundle');
-  const [count, setCount] = useState(bundles.length);
+	const [filteredAgents, setFilteredAgents] = useState(agents);
+	const [showBundles, setShowBundles] = useState(true);
+	const [bundlesData, setBundles] = useState(bundles);
+	const [heading, setHeading] = useState('Gun Bundle');
+	const [count, setCount] = useState(bundles.length);
+	const [searchValue, setSearchValue] = useState('');
 
-  const displayBundles = () => {
-    setHeading('Gun Bundle');
-    setShowBundles(true);
-    setCount(bundlesData.length);
-  };
+	const displayBundles = () => {
+		setHeading('Gun Bundle');
+		setShowBundles(true);
+		setCount(bundlesData.length);
+		setSearchValue('');
+	};
 
-  const shuffleBundles = () => {
-    if (!showBundles) return;
-    const randomBundles = [...bundlesData].sort(() => Math.random() - 0.5);
-    setBundles(randomBundles);
-  };
+	const shuffleBundles = () => {
+		if (!showBundles) return;
+		const randomBundles = [...bundlesData].sort(() => Math.random() - 0.5);
+		setBundles(randomBundles);
+	};
 
-  return (
-    <>
-      <Navbar
-        setFilteredAgents={setFilteredAgents}
-        setShowBundles={setShowBundles}
-        agents={agents}
-        displayBundles={displayBundles}
-        setHeading={setHeading}
-        setCount={setCount}
-      />
-      <div className='App'>
-        <h1>
-          {`${heading}s`}
-          <span className='count'>{count}</span>
-          {showBundles && (
-            <span className='shuffle' onClick={shuffleBundles}>
-              <img src={shuffle} alt='Shuffle-Icon' />
-            </span>
-          )}
-        </h1>
-        {!showBundles ? (
-          <Agents agents={agents} _filter={filteredAgents} />
-        ) : (
-          <Bundle bundlesData={bundlesData} />
-        )}
-      </div>
-    </>
-  );
+	const isAllAgentsPage = heading.toUpperCase() === 'VALORANT AGENT';
+
+	const filterBySearch = (data, key) =>
+		data.filter((item) =>
+			item[key].toUpperCase().includes(searchValue.toUpperCase())
+		);
+
+	const searchFilteredBundles =
+		showBundles && filterBySearch(bundlesData, 'displayName');
+	const searchFilteredAgents =
+		isAllAgentsPage && filterBySearch(agents, 'displayName');
+
+	return (
+		<>
+			<Navbar
+				setFilteredAgents={setFilteredAgents}
+				setShowBundles={setShowBundles}
+				agents={agents}
+				displayBundles={displayBundles}
+				setHeading={setHeading}
+				setCount={setCount}
+				resetFilter={() => setSearchValue('')}
+			/>
+
+			<div className='App'>
+				{(showBundles || isAllAgentsPage) && (
+					<div id='search-container'>
+						<SearchBar
+							value={searchValue}
+							onInput={(value) => setSearchValue(value)}
+						/>
+					</div>
+				)}
+				<h1>
+					{`${heading}s`}
+					<span className='count'>{count}</span>
+					{showBundles && (
+						<span className='shuffle' onClick={shuffleBundles}>
+							<img src={shuffle} alt='Shuffle-Icon' />
+						</span>
+					)}
+				</h1>
+				{!showBundles ? (
+					<Agents
+						agents={agents}
+						_filter={searchFilteredAgents || filteredAgents}					/>
+				) : (
+					<Bundle bundlesData={searchFilteredBundles} />
+				)}
+			</div>
+		</>
+	);
 }
 
 export default App;
