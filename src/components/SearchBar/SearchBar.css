@@ -1,3 +1,8 @@
+div#search-container{
+	display: flex;
+	align-items: center;
+}
+
 label#search-label {
 	padding-top: 0.5rem;
 	padding-right: 0.5rem;
@@ -7,7 +12,7 @@ label#search-label {
 svg#search-icon {
 	fill: #cccc;
 	pointer-events: none;
-	scale: 1.6;
+	scale: 1.5;
 }
 
 input#search-bar {

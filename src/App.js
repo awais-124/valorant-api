@@ -36,7 +36,7 @@ function App() {
 
 	const filterBySearch = (data, key) =>
 		data.filter((item) =>
-			item[key].toUpperCase().includes(searchValue.toUpperCase())
+			item[key].toUpperCase().startsWith(searchValue.toUpperCase())
 		);
 
 	const searchFilteredBundles =
@@ -57,27 +57,29 @@ function App() {
 			/>
 
 			<div className='App'>
-				{(showBundles || isAllAgentsPage) && (
-					<div id='search-container'>
+				<div id='heading'>
+					<h1>
+						{`${heading}s`}
+						<span className='count'>{count}</span>
+						{showBundles && (
+							<span className='shuffle' onClick={shuffleBundles}>
+								<img src={shuffle} alt='Shuffle-Icon' />
+							</span>
+						)}
+					</h1>
+					{(showBundles || isAllAgentsPage) && (
 						<SearchBar
 							value={searchValue}
 							onInput={(value) => setSearchValue(value)}
+							style={{ justifyContent: 'center' }}
 						/>
-					</div>
-				)}
-				<h1>
-					{`${heading}s`}
-					<span className='count'>{count}</span>
-					{showBundles && (
-						<span className='shuffle' onClick={shuffleBundles}>
-							<img src={shuffle} alt='Shuffle-Icon' />
-						</span>
 					)}
-				</h1>
+				</div>
 				{!showBundles ? (
 					<Agents
 						agents={agents}
-						_filter={searchFilteredAgents || filteredAgents}					/>
+						_filter={searchFilteredAgents || filteredAgents}
+					/>
 				) : (
 					<Bundle bundlesData={searchFilteredBundles} />
 				)}

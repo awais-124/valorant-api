@@ -1,9 +1,9 @@
 import React from "react";
 import "./SearchBar.css";
 
-function SearchBar({ value, onInput }) {
+function SearchBar({ style, value, onInput }) {
 	return (
-		<>
+		<div id="search-container" style={style}>
 			<label id="search-label">
 				<svg
 					id="search-icon"
@@ -22,7 +22,7 @@ function SearchBar({ value, onInput }) {
 				onChange={(e) => onInput(e.target.value)}
 				placeholder="Filter by name"
 			/>
-		</>
+		</div>
 	);
 }
 
