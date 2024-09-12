@@ -68,11 +68,13 @@ function App() {
 						)}
 					</h1>
 					{(showBundles || isAllAgentsPage) && (
-						<SearchBar
-							value={searchValue}
-							onInput={(value) => setSearchValue(value)}
-							style={{ justifyContent: 'center' }}
-						/>
+						<div className="search-bar">
+							<SearchBar
+								value={searchValue}
+								onInput={(value) => setSearchValue(value)}
+								style={{ justifyContent: 'center' }}
+							/>
+						</div>
 					)}
 				</div>
 				{!showBundles ? (

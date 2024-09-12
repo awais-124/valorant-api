@@ -10,9 +10,7 @@
 }
 
 #heading {
-	display: flex;
-	justify-content: space-between;
-	padding-inline: 4rem;
+	position: relative;
 }
 
 h1 {
@@ -20,6 +18,13 @@ h1 {
 	font-weight: 600;
 	font-size: 40px;
 	color: brown;
+}
+
+.search-bar {
+	position: absolute;
+	right: 6rem;
+	top: 50%;
+	transform: translateY(-50%);
 }
 
 .shuffle img {
@@ -80,7 +85,6 @@ h1 {
 }
 .nav-list li:hover {
 	color: white;
-	transition: all 0.5s;
 }
 
 .bar-image {
@@ -125,5 +129,10 @@ h1 {
 		margin-block-end: 3rem;
 		flex-direction: column;
 		padding-inline: 3rem;
+	}
+}
+@media screen and (max-width: 1380px) {
+	.search-bar {
+		position: static;
 	}
 }
